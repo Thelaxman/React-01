@@ -48,6 +48,14 @@ export class AuthService {
       throw new error();
     }
   }
+
+  async logOut() {
+    try {
+      await this.account.deleteSessions();
+    } catch (error) {
+      throw new error();
+    }
+  }
 }
 
 const authService = new AuthService();
